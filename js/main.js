@@ -61,3 +61,26 @@ function createCell(cellsContainer, i, totalCells) {
 
     cellsContainer.append(myCell);
     return myCell;
+
+    // RANDOM NUMBERS
+
+function generateRandomNumber(min, max) {
+    const randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
+    return randomNumber;
+};
+
+// ARRAY BOMBS
+
+function bombsArray (max) {
+    const bombs = [];
+    while (bombs.length < 16) {
+      let randomNumber = generateRandomNumber (1, max);
+
+      if (!bombs.includes(randomNumber))
+      bombs.push(randomNumber)
+    };
+
+    return bombs;
+};
+
+function endGame () {};
