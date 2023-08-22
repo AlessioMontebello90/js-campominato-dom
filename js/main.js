@@ -22,3 +22,42 @@ gridButton.addEventListener("click", () => {
   bombs = bombsArray(totalCells);
   console.log(bombs);
 });
+
+// GRILL
+
+function generateGrid(totalCells, cellsContainer, whitelist) {
+  cellsContainer.innerHTML = "";
+
+  while (whitelist.length) {
+    const randomIndex = generateRandomNumber(0, whitelist.length - 1);
+    const randomValue = whitelist[randomIndex];
+    whitelist.splice(randomIndex, 1);
+    createCell(cellsContainer, randomValue, totalCells);
+  }
+}
+
+// CELL
+
+function createCell(cellsContainer, i, totalCells) {
+
+    const myCell = document.createElement("div");
+    // myCell.innerText = index;
+    myCell.setAttribute("data-index", i)
+    myCell.classList.add("cell");
+    myCell.classList.add("cell-" + totalCells);
+
+
+    // EVENT LISTENER CELL
+
+    myCell.addEventListener("click", () => {
+        const index = parseInt(myCell.getAttribute("data-index"));
+        myCell.innerText = index;
+        myCell.classList.add(index % 2 == 0 ? "background-even" : "background-odd");
+        console.log("Hai cliccato il numero " + i);
+        if (bombs.includes(i)) {
+            alert ("Bomb");
+        };
+    });
+
+    cellsContainer.append(myCell);
+    return myCell;
