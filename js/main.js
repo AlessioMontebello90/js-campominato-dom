@@ -12,3 +12,13 @@ function generateArray(from, to, step) {
   }
   return whitelist;
 }
+
+// GRILL + WHITELIST EVENTS
+
+gridButton.addEventListener("click", () => {
+  let totalCells = parseInt(difficultySelect.value);
+  const whitelist = generateArray(1, totalCells, 1);
+  generateGrid(totalCells, cellsContainer, whitelist);
+  bombs = bombsArray(totalCells);
+  console.log(bombs);
+});
