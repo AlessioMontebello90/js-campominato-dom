@@ -14,5 +14,31 @@
     <script src="./js/main.js" defer></script>
     <title>Campo minato dom</title>
   </head>
-  <body></body>
+  <body>
+    <body>
+      <div class="container">
+        <h1 class="text-center text-white text-uppercase">Campo Minato</h1>
+        <div class="row justify-content-center align-items-center my-4">
+          <div class="col-3">
+            <div class="form-floating">
+              <select
+                class="form-select"
+                id="difficulty"
+                aria-label="Floating label select example"
+              >
+                <option value="100">Facile</option>
+                <option value="81">Intermedio</option>
+                <option value="49">Difficile</option>
+              </select>
+              <label for="difficulty">Scegli la difficoltà</label>
+            </div>
+          </div>
+          <div class="col-3">
+            <button class="btn btn-primary" id="grid-button">Iniziamo!</button>
+          </div>
+        </div>
+        <div id="box-target" class="d-flex flex-wrap"></div>
+      </div>
+    </body>
+  </body>
 </html>
